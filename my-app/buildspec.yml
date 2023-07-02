@@ -6,8 +6,8 @@ runtime-versions:
 nodejs: 16
 build:
 commands:
-– npm install
+– sudo npm install
 post_build:
 commands:
-– npm run build
+– sudo npm run build
 
