@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       nodejs: 16
     commands:
-      - npm install --force
+      - sudo -u webapp npm install
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
