@@ -1,19 +1,13 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 16
-    commands:
-      - sudo -u webapp npm install
-  pre_build:
-    commands:
-      - echo Installing source NPM dependencies...
-  build:
-    commands:
-      - echo Build started on `date`
-  post_build:
-    commands:
-      - echo Build completed on `date`
-  files:
-   - '**/*'
+install:
+runtime-versions:
+nodejs: 14
+build:
+commands:
+– npm install
+post_build:
+commands:
+– npm run build
+
