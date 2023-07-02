@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /var/app/staging
-sudo -u webapp npm install
+sudo -u webapp npm install --force
