@@ -1,13 +1,29 @@
 version: 0.2
 
 phases:
-install:
-runtime-versions:
-nodejs: 16
-build:
-commands:
-– npm install
-– npm install express cors pg
-post_build:
-commands:
-– npm run build
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - npm install --force
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm install react react-dom
+      - npm install typescript
+      - npm run build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  type: zip
+  files:
+    - 'public/**/*'
+    - 'package.json'
+    - 'tsconfig.json'
+cache:
+  paths:
+    - node_modules
