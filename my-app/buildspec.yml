@@ -12,18 +12,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - npm install react react-dom
-      - npm install typescript
       - npm run build
   post_build:
     commands:
       - echo Build completed on `date`
-artifacts:
-  type: zip
   files:
-    - 'public/**/*'
-    - 'package.json'
-    - 'tsconfig.json'
-cache:
-  paths:
-    - node_modules
+   - '**/*'
